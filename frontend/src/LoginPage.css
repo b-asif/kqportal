@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+}
+.Login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 30px;
+  background-color: #f9fafb;
+}
+.Login-header {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  padding: 20px;
+  padding-top: 55px;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  color: #2F4F2F;
+  font-family:'Source Serif 4', serif;
+  letter-spacing: 10px;
+}
+.input {
+  font-family:'Source Serif 4', serif;
+}
+.Login-header h1::after {
+  content: "";
+  align-items: center;
+  display: block;
+  width: 600px;
+  height: 3px;
+  background-color: #FFD700;
+  opacity: 70%;
+  margin: 5px auto;
+}
+.subText {
+  font-size: 20px;
+  margin-top: -10px;
+  letter-spacing: 15px;
+}
+
+.login-box {
+  background-color: #2F4F2F;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 80px 20px;
+  border-radius: 15px;
+  font-family:'Source Serif 4', serif;
+
+}
+.login-box h2 {
+  font-family:'Source Serif 4', serif;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-top: 0px;
+  color: #FFD700;
+}
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.checkbox-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: black;
+}
+.checkbox-container label {
+  color: white;
+  font-size: 10px;
+  line-height: 1;
+  font-family:'Source Serif 4', serif;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.checkbox-container button.forgot {
+  background: none;
+  border: none;
+  color: white; /* Set the color to the same as your header or desired text color */
+  font-family: 'Source Serif 4', serif;
+  margin-left: auto;
+  padding: 0;
+  font-size: 10px;
+  cursor: pointer;
+  text-decoration: underline; 
+}
+.login-box .checkbox-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.login-box button.signIn {
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #FFD700;
+  opacity: 70%;
+  color: white;
+  font-family: 'Source Serif 4', serif;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.new-account {
+  display: flex;
+  font-family:'Source Serif 4', serif;
+  color: white;
+  font-weight: bold;
+  gap: 10px;
+  font-size: 12px;
+  padding-top: 10px;
+}
+.create-account {
+  border: none;
+  background: none;
+  text-decoration: underline;
+  color: white;
+  font-family:'Source Serif 4', serif;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .login-box {
+    margin: 30px 16px;
+    padding: 32px 16px;
+  }
+  .Login-header h1 {
+    font-size: 24px;
+    letter-spacing: 4px;
+  }
+
+  .subText {
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+
+  .login-box {
+    padding: 30px 20px;
+    max-width: 90%;
+    margin: 60px auto;
+  }
+
+  .login-box h2{
+    font-size: 20px;
+  }
+
+  .login-box input {
+    font-size: 14px;
+  }
+
+  .login-box button.signIn {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .new-account {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px
+  }
+}

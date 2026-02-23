@@ -1,0 +1,1 @@
+MODELS folder is used to handle the logic that talks directly to the database 

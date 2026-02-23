@@ -1,0 +1,366 @@
+.app-shell {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.app-body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    overflow: hidden;
+    padding: 0;
+}
+
+.directory {
+    font-family: 'Cinzel', serif;
+}
+
+.directory-page {
+    display: flex;
+    height: auto;
+    margin-top: 64px;
+}
+
+.header {
+    border: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: medium;
+}
+
+.header h1 {
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.sidebar-toggle {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #2f4a2f;
+    overflow: hidden;
+    color: white;
+    padding: 0;
+    font-family: 'Cinzel', serif;
+}
+
+/* Open vs closed */
+.sidebar-open .app-body {
+    grid-template-columns: 260px 1fr;
+}
+
+.sidebar-closed .app-body {
+    grid-template-columns: 0px 1fr;
+}
+
+.sidebar-closed .nav-text {
+    display: none;
+}
+
+.sidebar-closed .logo-1 {
+    display: none;
+}
+
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: white;
+    border: 0;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Cinzel', serif;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.main-content {
+    padding-left: 10px;
+    background-color: #f9fafb;
+    width: 100%;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.logo-1 {
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+
+.tutor-directory {
+    padding: 40px;
+}
+
+.tutor-header {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.tutor-directory h2 {
+    margin: 0;
+}
+
+.tutor-directory h3 {
+    font-size: 15px;
+    margin: 0;
+}
+
+.card-box {
+    margin: 30px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+}
+
+.card-box>*:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    box-shadow: none;
+}
+
+.sub-header {
+    padding: 10px 60px;
+    background-color: #f7f8f7;
+    display: flex;
+    align-items: center;
+    color: #2F4F2F;
+    justify-content: space-between;
+}
+
+.tutor-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 24px 50px;
+}
+
+.logo1 {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+}
+
+.left-side {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+
+}
+
+.subjects {
+    padding: 0;
+    margin-left: 0;
+    display: flex;
+    margin-top: 6px;
+    gap: 8px;
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+
+.subject-tag {
+    background-color: #eef1ec;
+    color: #2F4F2F;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.border {
+    background-color: #2F4F2F;
+    height: 1px;
+    width: 95%;
+}
+
+.right-side {
+    gap: 20px;
+    justify-content: flex-end;
+    margin-top: 56px;
+    display: flex;
+}
+
+.action-btn {
+    font-size: 13px;
+    font-family: 'Source Serif 4', serif;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    padding: 0;
+    color: #2F4F2F;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    text-decoration: underline;
+}
+
+.sidebar {
+    width: 220px;
+    background: #2F4F2F;
+    font-family: 'Source Serif 4', serif;
+    padding: 24px;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 0;
+
+}
+
+.avatar {
+    background: white;
+    color: #2F4F2F;
+    font-weight: bold;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.name {
+    margin: 0;
+    color: white;
+    font-size: 16px;
+}
+
+.courses {
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.card-box>.tutor-info:last-child {
+    border-bottom: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.modal-card {
+    width: min(520px, 92vw);
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    border: 1px solid #e6e8ef;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.modal-form {
+    display: grid;
+    gap: 10px;
+}
+
+.modal-form label {
+    display: grid;
+    gap: 6px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.modal-form input {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #e6e8ef;
+    outline: none;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.modal-btn {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #e6e8ef;
+    cursor: pointer;
+}
+
+.modal-btn.primary {
+    background: #2F4F2F;
+    color: #fff;
+    border-color: #2F4F2F;
+}
+
+.modal-btn.ghost {
+    background: transparent;
+}

@@ -1,0 +1,398 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Page wrapper */
+.schedule-page {
+    height: 100vh;
+    background: #f6f7fb;
+}
+
+/* App shell layout */
+.app-shell {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    background: #2f4a2f;
+    color: white;
+
+    padding-inline: clamp(12px, 2vw, 24px);
+    min-height: 64px;
+
+    border: 0;
+    box-shadow: none;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.sidebar-toggle {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+    font-weight: 500;
+}
+
+/* Body layout */
+.app-body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    overflow: hidden;
+}
+
+/* Sidebar open/closed */
+.sidebar-open .app-body {
+    grid-template-columns: 260px 1fr;
+}
+
+.sidebar-closed .app-body {
+    grid-template-columns: 72px 1fr;
+    /* icon rail */
+}
+
+.sidebar-closed .nav-text {
+    display: none;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #2f4a2f;
+    color: white;
+    padding: 10px;
+    overflow: hidden;
+}
+
+/* Nav buttons */
+.nav-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: transparent;
+    color: white;
+
+    border: 0;
+    padding: 10px 10px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    text-align: left;
+
+    font-family: "Source Serif 4", serif;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.logo-1 {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* Closed: center icons */
+.sidebar-closed .nav-link {
+    justify-content: center;
+    padding: 12px 0;
+}
+
+/* Main content */
+.main-content {
+    padding: 18px;
+    overflow: auto;
+}
+
+/* Card */
+.card {
+    background: white;
+    border: 1px solid #e6e8ef;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0 12px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+    font-weight: 650;
+}
+
+.muted {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* Top area (date + title) */
+.schedule-controls label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* space between "Date" and input */
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Date input styling */
+.schedule-controls input[type="date"] {
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 14px;
+    background: white;
+}
+
+.schedule-controls input[type="date"]:focus {
+    outline: none;
+    border-color: #94a3b8;
+    box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.35);
+}
+
+/* Schedule grid wrapper */
+.schedule-grid-wrap {
+    overflow: auto;
+    border-radius: 12px;
+    border: 1px solid #e6e8ef;
+}
+
+/* Table */
+.schedule-grid {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    min-width: 760px;
+    table-layout: fixed;
+    /* key for consistent column sizing */
+}
+
+/* Cells */
+.schedule-grid th,
+.schedule-grid td {
+    border-bottom: 1px solid #e6e8ef;
+    border-right: 1px solid #e6e8ef;
+    padding: 10px;
+    vertical-align: top;
+    background: white;
+}
+
+/* Header row: bold */
+.schedule-grid th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    background: #f8fafc;
+    font-weight: 750;
+    /* bolder for Tutor + time slots */
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    color: #111827;
+    text-align: center;
+}
+
+/* Tutor header left-aligned */
+.schedule-grid th.sticky-col {
+    text-align: left;
+}
+
+/* Remove last borders */
+.schedule-grid tr:last-child td {
+    border-bottom: 0;
+}
+
+.schedule-grid td:last-child,
+.schedule-grid th:last-child {
+    border-right: 0;
+}
+
+/* Sticky tutor column */
+.sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background: #f8fafc;
+
+    /* Dynamic tutor column width */
+    width: clamp(140px, 18vw, 220px);
+    max-width: 220px;
+}
+
+/* Tutor names */
+.tutor-name {
+    font-weight: 600;
+    color: #111827;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Time slot columns: keep them from being too wide */
+.schedule-grid th:not(.sticky-col),
+.schedule-grid td:not(.sticky-col) {
+    max-width: 300px;
+    /* adjust smaller/larger as you like */
+}
+
+/* Session cell */
+.session-cell {
+    border: 1px solid #dbeafe;
+    background: #eff6ff;
+    border-radius: 10px;
+    padding: 8px;
+
+    min-height: 70px;
+
+    /* prevents huge cells from growing too tall */
+    max-height: 140px;
+    overflow: auto;
+}
+
+/* Students list */
+.students {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.student-pill {
+    background: white;
+    border: 1px solid #c7d2fe;
+    padding: 6px 8px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.empty-cell {
+    color: #9ca3af;
+    text-align: center;
+    padding: 18px 8px;
+}
+
+.week-wrap {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    overflow: auto;
+    background: white;
+}
+
+.week-grid {
+    display: grid;
+    min-width: 1100px;
+    /* so it behaves like a spreadsheet */
+    position: relative;
+}
+
+/* base cell */
+.cell {
+    border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    background: white;
+}
+
+/* sticky top row */
+.day-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #90a4ae;
+    /* similar to screenshot */
+    color: white;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* sticky left time column */
+.time-cell {
+    position: sticky;
+    left: 0;
+    z-index: 4;
+    background: #f8fafc;
+    font-size: 12px;
+    color: #374151;
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.corner {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    background: #90a4ae;
+}
+
+.grid-bg {
+    background: #fff;
+}
+
+/* event blocks */
+.event {
+    z-index: 3;
+    margin: 2px 6px;
+    border-radius: 8px;
+    padding: 6px 8px;
+    color: #111827;
+    font-weight: 700;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.event-title {
+    font-size: 14px;
+}
+
+.event-subtitle {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.9;
+}

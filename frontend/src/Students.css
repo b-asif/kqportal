@@ -1,0 +1,256 @@
+.students-page {
+    height: 100vh;
+    background: #f6f7fb;
+}
+
+/* Reuse your existing layout styles if already global.
+     If not, keep these here. */
+.app-shell {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.app-body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    overflow: hidden;
+}
+
+.sidebar-open .app-body {
+    grid-template-columns: 260px 1fr;
+}
+
+.sidebar-closed .app-body {
+    grid-template-columns: 72px 1fr;
+}
+
+.sidebar-closed .nav-text {
+    display: none;
+}
+
+/* Header (dynamic sizing like you wanted earlier) */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    background: #2f4a2f;
+    color: white;
+
+    padding-inline: clamp(12px, 2vw, 24px);
+    min-height: 64px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.sidebar-toggle {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+    font-weight: 500;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #2f4a2f;
+    color: white;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.nav-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: transparent;
+    color: white;
+
+    border: 0;
+    padding: 10px 10px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    text-align: left;
+    font-family: "Source Serif 4", serif;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.logo-1 {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.sidebar-closed .nav-link {
+    justify-content: center;
+    padding: 12px 0;
+}
+
+/* Content */
+.main-content {
+    padding: 18px;
+    overflow: auto;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e6e8ef;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+.muted {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.students-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.students-title h2 {
+    margin: 0;
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+    font-weight: 750;
+    color: #111827;
+}
+
+.students-search input {
+    width: min(520px, 60vw);
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+.students-search input:focus {
+    border-color: #94a3b8;
+    box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.35);
+}
+
+/* Table */
+.table-wrap {
+    border: 1px solid #e6e8ef;
+    border-radius: 12px;
+    overflow: auto;
+}
+
+.students-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 760px;
+}
+
+.students-table th,
+.students-table td {
+    border-bottom: 1px solid #e6e8ef;
+    padding: 12px 10px;
+    text-align: left;
+    background: white;
+}
+
+.students-table th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #f8fafc;
+    font-weight: 750;
+    color: #111827;
+}
+
+.students-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.name-cell {
+    font-weight: 650;
+    color: #111827;
+}
+
+.students-table tbody tr:hover td {
+    background: #f9fafb;
+}
+
+.clickable-row {
+    cursor: pointer;
+}
+
+.clickable-row:hover td {
+    background: #f3f4f6;
+}
+
+.parent-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.parent-name {
+    font-weight: 650;
+    color: #111827;
+}
+
+.parent-sub {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.parent-entry+.parent-entry {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed #e5e7eb;
+}
+
+.btn {
+    border: 1px solid #cbd5e1;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #111827;
+}
+
+.btn:hover {
+    background: #f9fafb;
+    border-color: #94a3b8;
+}

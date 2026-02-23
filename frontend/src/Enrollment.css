@@ -1,0 +1,241 @@
+.enrollment-page {
+    height: 100vh;
+    background: #f6f7fb;
+}
+
+/* Layout uses your same existing classes:
+     .app-shell, .app-body, .sidebar-open/closed, .header, .sidebar, .nav-link,
+     .main-content, .card, .muted, etc.
+     If those are global already, you can remove duplicates and only keep the new bits below.
+  */
+
+/* Only new stuff specific to Enrollment page */
+.enroll-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.enroll-title h2 {
+    margin: 0;
+    font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+    font-weight: 750;
+    color: #111827;
+}
+
+.notice {
+    border: 1px solid #e6e8ef;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin: 10px 0 14px;
+    font-size: 14px;
+}
+
+.notice.info {
+    background: #f8fafc;
+}
+
+.notice.success {
+    background: rgba(0, 200, 0, 0.08);
+    border-color: rgba(0, 200, 0, 0.25);
+}
+
+.notice.error {
+    background: rgba(255, 0, 0, 0.07);
+    border-color: rgba(255, 0, 0, 0.25);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.panel {
+    border: 1px solid #e6e8ef;
+    border-radius: 14px;
+    padding: 12px;
+    background: white;
+}
+
+.panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.panel-head h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 750;
+    color: #111827;
+}
+
+.fields {
+    display: grid;
+    gap: 10px;
+}
+
+.fields label {
+    display: grid;
+    gap: 6px;
+}
+
+.fields label span {
+    font-size: 13px;
+    font-weight: 650;
+    color: #111827;
+}
+
+.fields input {
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+.fields input:focus {
+    border-color: #94a3b8;
+    box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.35);
+}
+
+/* Sessions */
+.sessions-panel {
+    margin-top: 6px;
+}
+
+.panel-head.row {
+    align-items: flex-end;
+}
+
+.session-search input {
+    width: min(520px, 60vw);
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+.session-search input:focus {
+    border-color: #94a3b8;
+    box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.35);
+}
+
+.sessions-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.session-chip {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    border: 1px solid #e6e8ef;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 10px 12px;
+
+    cursor: pointer;
+    text-align: left;
+}
+
+.session-chip:hover {
+    background: #f9fafb;
+}
+
+.session-chip.selected {
+    border-color: rgba(47, 74, 47, 0.5);
+    box-shadow: 0 0 0 3px rgba(47, 74, 47, 0.15);
+}
+
+.chip-title {
+    font-weight: 750;
+    color: #111827;
+}
+
+.chip-sub {
+    font-size: 12px;
+}
+
+.chip-check {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    border: 1px solid #e6e8ef;
+    display: grid;
+    place-items: center;
+    font-weight: 850;
+}
+
+.selected-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.link-btn {
+    background: transparent;
+    border: 0;
+    color: #2f4a2f;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.link-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.btn {
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #e6e8ef;
+    cursor: pointer;
+    font-weight: 750;
+}
+
+.btn.primary {
+    background: #2f4a2f;
+    border-color: #2f4a2f;
+    color: white;
+}
+
+.btn.primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn.secondary {
+    background: white;
+}
+
+@media (max-width: 900px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sessions-list {
+        grid-template-columns: 1fr;
+    }
+}
